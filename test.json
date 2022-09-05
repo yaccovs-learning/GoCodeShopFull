@@ -1,0 +1,75 @@
+{
+    "Error": {
+        "errors": {
+            "rate": {
+                "name": "ValidatorError",
+                "message": "Path `rate` is required.",
+                "properties": {
+                    "message": "Path `rate` is required.",
+                    "type": "required",
+                    "path": "rate"
+                },
+                "kind": "required",
+                "path": "rate"
+            },
+            "description": {
+                "name": "ValidatorError",
+                "message": "Path `description` is required.",
+                "properties": {
+                    "message": "Path `description` is required.",
+                    "type": "required",
+                    "path": "description"
+                },
+                "kind": "required",
+                "path": "description"
+            },
+            "image": {
+                "name": "ValidatorError",
+                "message": "Path `image` is required.",
+                "properties": {
+                    "message": "Path `image` is required.",
+                    "type": "required",
+                    "path": "image"
+                },
+                "kind": "required",
+                "path": "image"
+            },
+            "price": {
+                "name": "ValidatorError",
+                "message": "Path `price` is required.",
+                "properties": {
+                    "message": "Path `price` is required.",
+                    "type": "required",
+                    "path": "price"
+                },
+                "kind": "required",
+                "path": "price"
+            },
+            "category": {
+                "name": "ValidatorError",
+                "message": "Path `category` is required.",
+                "properties": {
+                    "message": "Path `category` is required.",
+                    "type": "required",
+                    "path": "category"
+                },
+                "kind": "required",
+                "path": "category"
+            },
+            "title": {
+                "name": "ValidatorError",
+                "message": "Path `title` is required.",
+                "properties": {
+                    "message": "Path `title` is required.",
+                    "type": "required",
+                    "path": "title"
+                },
+                "kind": "required",
+                "path": "title"
+            }
+        },
+        "_message": "Product validation failed",
+        "name": "ValidationError",
+        "message": "Product validation failed: rate: Path `rate` is required., description: Path `description` is required., image: Path `image` is required., price: Path `price` is required., category: Path `category` is required., title: Path `title` is required."
+    }
+}
