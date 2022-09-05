@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd client && ./node_modules/react-scripts/bin/react-scripts.js build",
+    "build": "cd client && npm i && echo $PWD && npm run build",
     "start": "node server.js"
   },
   "keywords": [],
