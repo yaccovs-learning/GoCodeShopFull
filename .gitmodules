@@ -1,3 +1,5 @@
 [submodule "client"]
 	path = client
 	url = ../gocode-shop/
+[submodule "https://github.com/yaccovs-learning/gocode-shop"]
+	url = client
