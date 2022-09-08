@@ -17,7 +17,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static("client/build"))
+app.use(express.static("client/build"));
 
 //****** Model *****
 const ratingSchema = new mongoose.Schema({
@@ -137,10 +137,39 @@ app.put("/api/products/:productId", async (req, res) => {
   }
 });
 
+app.put("/api/products/rating/:productId", async (req, res) => {
+  const productId = req.params.productId;
+  const newRate = Number(req.body.rate);
+  try {
+    const product = await Product.findOne({ _id: productId });
+    const prevRate = product.rating.rate;
+    const prevCount = product.rating.count;
+    const newCount = product.rating.count + 1;
+    product.rating.count = newCount;
+    product.rating.rate =
+      (newRate / newCount) + prevRate * (prevCount / newCount);
+    await product.save();
+    responseJSON(res, 200, product.rating);
+    return
+  } catch (e) {
+    responseJSON(res, 501, e);
+    return
+  }
+});
+
+/*
+            const prevRate = info.rating.rate;
+            const prevCount = info.rating.count;
+            const newCount = ++info.rating.count;
+            info.rating.rate =
+              value / newCount + prevRate * (prevCount / newCount);
+
+*/
+
 app.get("*", (req, res) => {
   console.log(req.url);
   // if (req.url === "/") {
-    res.sendFile(__dirname + "/client/build/index.html");
+  res.sendFile(__dirname + "/client/build/index.html");
   // } else {
   //   res.sendFile(__dirname + "/client/build/" + req.url);
 
